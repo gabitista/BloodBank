@@ -1,10 +1,9 @@
-estoque_sangue = []
-
-def cadastrar_bolsa(doador):
+def cadastrar_bolsa(tipo_sanguineo, quantidade, data_doacao):
     bolsa = {
-        "doador": doador,
-        "tipo_sanguineo": doador["tipo_sanguineo"]
+        'tipo_sanguineo': doador["tipo_sanguineo"],
+        'quantidade': quantidade,
+        'data_doacao': data_doacao
     }
-    
-    estoque_sangue.append(bolsa)    
+    with open('bolsas.txt', 'a') as file:
+        file.write(f"{bolsa}\n')
     return bolsa
