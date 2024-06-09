@@ -1,35 +1,31 @@
 def validar_doador(doador):
-    if doador['idade'] >= 18 and doador['idade'] <= 60:
-        return True
-      
-    if peso < 50:
-        return False, "Peso abaixo do mínimo exigido (50 kg)."
+    # Validação dos requisitos, conforme o cadastro
+
+    if not (18 <= doador['idade'] <= 60):
+        return False, "Idade fora do limite permitido (18-60 anos)."
     
-    if hemoglobina < 12.5:
+    if doador['peso'] < 50:
+        return False, "O peso mínimo é de 50 kg. Paciente abaixo do limite"
+    
+    if doador['hemoglobina'] < 12.5:
         return False, "Nível de hemoglobina abaixo do mínimo exigido (12.5 g/dL)."
     
-    if pressao_sistolica < 90 or pressao_sistolica > 160 or pressao_diastolica < 60 or pressao_diastolica > 100:
+    if doador['pressao_sistolica'] < 90 or doador['pressao_sistolica'] > 160 or doador['pressao_diastolica'] < 60 or doador['pressao_diastolica'] > 100:
         return False, "Pressão arterial fora dos limites permitidos."
-    
-    if gravidez:
+
+    if doador['gravidez']:
         return False, "Não pode doar durante a gravidez."
     
-    if amamentacao:
+    if doador['amamentacao']:
         return False, "Não pode doar durante a amamentação."
 
-    if cirurgia_recente:
-        return False, "Período de espera após cirurgia ainda não completado."
-  
-    if vacina_recente:
-        return False, "Período de espera após vacinação ainda não completado."
-    
-    if viagem_recente:
-        return False, "Período de espera após viagem para área endêmica ainda não completado."
+    if doador['resfriado']:
+        return False, "Não pode doar com resfriado."
 
-    if tatuagem_piercing_recente:
-        return False, "Período de espera após tatuagem ou piercing ainda não completado."
-    
-return True, "Você está apto a doar sangue!"
+    if doador['bebida_alcoolica']:
+        return False, "Não pode doar após ingestão de bebida alcoólica."
 
-aptidao, mensagem = pode_doar_sangue(idade, peso, hemoglobina, pressao_sistolica, pressao_diastolica, gravidez, amamentacao, cirurgia_recente, vacina_recente, viagem_recente, tatuagem_piercing_recente)
-print(mensagem)
+    if any(doador[proc] for proc in ["tatuagem", "maquiagem_definitiva", "micropigmentacao", "piercing", "brinco"]):
+        return False, "Período de espera após tatuagem, maquiagem definitiva, micropigmentação, piercing ou brinco ainda não completado."
+
+    return True, "Você está apto a doar sangue!"

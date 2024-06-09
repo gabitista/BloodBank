@@ -1,0 +1,1 @@
+{'nome': 'Geovanne', 'idade': 18, 'tipo_sanguineo': 'O-', 'cpf': '333', 'resfriado': False, 'gravidez': False, 'amamentacao': False, 'bebida_alcoolica': False, 'tatuagem': False, 'maquiagem_definitiva': False, 'micropigmentacao': False, 'piercing': False, 'brinco': False, 'peso': 75.0, 'hemoglobina': 14.4, 'pressao_sistolica': 100, 'pressao_diastolica': 80}

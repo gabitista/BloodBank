@@ -1,0 +1,11 @@
+Relatório de Doadores e Armazenamento de Sangue
+=======================================
+Total de Doadores: 1
+Armazenamento de Sangue A+: 0 bolsas
+Armazenamento de Sangue A-: 0 bolsas
+Armazenamento de Sangue B+: 0 bolsas
+Armazenamento de Sangue B-: 0 bolsas
+Armazenamento de Sangue AB+: 0 bolsas
+Armazenamento de Sangue AB-: 0 bolsas
+Armazenamento de Sangue O+: 0 bolsas
+Armazenamento de Sangue O-: 350 bolsas

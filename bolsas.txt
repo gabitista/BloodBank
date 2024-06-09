@@ -1,0 +1,1 @@
+{'tipo_sanguineo': 'O-', 'quantidade': 350, 'data_doacao': '09/06/2024'}

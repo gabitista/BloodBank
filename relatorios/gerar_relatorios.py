@@ -1,17 +1,20 @@
+from armazenamento.verificar_armazenamento import verificar_armazenamento
+
 def gerar_relatorio():
-    relatorio = "Relatório de Doadores e Estoque de Sangue\n"
+    # Simples relatório de exemplo
+    relatorio = "Relatório de Doadores e Armazenamento de Sangue\n"
     relatorio += "=======================================\n"
     
     with open('doadores.txt', 'r') as file:
         doadores = file.readlines()
         relatorio += f"Total de Doadores: {len(doadores)}\n"
-        
+    
     tipos_sanguineos = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
     for tipo in tipos_sanguineos:
-        estoque = verificar_estoque(tipo)
-        relatorio += f"Estoque de Sangue {tipo}: {estoque} bolsas\n"
+        armazenamento = verificar_armazenamento(tipo)
+        relatorio += f"Armazenamento de Sangue {tipo}: {armazenamento} mL\n"
     
     with open('relatorio.txt', 'w') as file:
         file.write(relatorio)
-        
+    
     return relatorio
