@@ -1,11 +1,12 @@
 import json
 
-def cadastrar_receptor(nome, idade, tipo_sanguineo, cpf):
+def cadastrar_receptor(nome,cpf, idade, tipo_sanguineo):
     receptor = {
         'nome': nome,
+        'CPF': cpf,
         'idade': idade,
-        'tipo_sanguineo': tipo_sanguineo,
-        'cpf': cpf
+        'tipo_sanguineo': tipo_sanguineo
+        
     }
     with open('receptores.json', 'a') as file:
         json.dump(receptor, file)
@@ -15,11 +16,12 @@ def cadastrar_receptor(nome, idade, tipo_sanguineo, cpf):
 def main():
     print("Cadastro de Receptores de Bolsa de Sangue")
     nome = input("Nome: ")
+    cpf = input("CPF: ")
     idade = input("Idade: ")
     tipo_sanguineo = input("Tipo Sanguíneo: ")
-    cpf = input("CPF: ")
     
-    receptor_cadastrado = cadastrar_receptor(nome, idade, tipo_sanguineo, cpf)
+    
+    receptor_cadastrado = cadastrar_receptor(nome,cpf, idade, tipo_sanguineo)
     print("Receptor cadastrado com sucesso:")
     print(receptor_cadastrado)
 
